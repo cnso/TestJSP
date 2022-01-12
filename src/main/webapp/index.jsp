@@ -1,3 +1,5 @@
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ include file="WEB-INF/web.xml"%>
 <!DOCTYPE html>
@@ -8,10 +10,22 @@
     <jsp:useBean id="p2" class="edu.zhuoxun.testjsp.entry.Person" scope="session"/>
     <jsp:useBean id="p3" class="edu.zhuoxun.testjsp.entry.Person" scope="request"/>
     <jsp:useBean id="p4" class="edu.zhuoxun.testjsp.entry.Person" scope="page"/>
-    <jsp:setProperty name="p1" property="name" value="张三"/>
-    <jsp:setProperty name="p2" property="name" value="李四"/>
-    <jsp:setProperty name="p3" property="name" value="王五"/>
-    <jsp:setProperty name="p4" property="name" value="赵六"/>
+<%--    <jsp:setProperty name="p1" property="name" value="张三"/>--%>
+<%--    <jsp:setProperty name="p2" property="name" value="李四"/>--%>
+<%--    <jsp:setProperty name="p3" property="name" value="王五"/>--%>
+<%--    <jsp:setProperty name="p4" property="name" value="赵六"/>--%>
+    <%
+        p1.setName("张三");
+        p2.setName("李四");
+        p3.setName("王五");
+        p4.setName("赵六");
+        List<String> list = new ArrayList<>();
+        for (int i = 0; i < 100; i++) {
+            list.add(String.format("item %03d", i));
+        }
+        request.setAttribute("list", list);
+        session.setAttribute("list", list);
+    %>
     <jsp:forward page="test.jsp"/>
 </head>
 <body>

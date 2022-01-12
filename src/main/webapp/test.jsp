@@ -19,5 +19,11 @@
     <p>p2: <jsp:getProperty name="p2" property="name"/></p>
     <p>p3: <jsp:getProperty name="p3" property="name"/></p>
     <p>p4: <jsp:getProperty name="p4" property="name"/></p>
+    <a href="hello-servlet">Hello Servlet</a>
+    <jsp:element name="a">
+        <jsp:attribute name="href">hello-servlet</jsp:attribute>
+        <jsp:attribute name="target">_blank</jsp:attribute>
+        <jsp:body>JSP Hello Servlet</jsp:body>
+    </jsp:element>
 </body>
 </html>

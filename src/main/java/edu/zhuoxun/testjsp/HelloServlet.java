@@ -22,8 +22,6 @@ public class HelloServlet extends HttpServlet {
         out.println("<html><body>");
         out.println("<h1>" + message + "</h1>");
         out.println("</body></html>");
-        response.sendRedirect("/index.jsp");
-        request.getRequestDispatcher("/index.jsp").forward(request, response);
     }
 
     public void destroy() {
